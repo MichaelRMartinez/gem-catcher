@@ -16,3 +16,5 @@ texture = ExtResource("1_qdfg5")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_2mlt2")
+
+[connection signal="area_entered" from="." to="." method="_on_gem_area_entered"]
