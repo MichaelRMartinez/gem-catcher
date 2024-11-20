@@ -7,6 +7,7 @@
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_pl10m")
+gem_scene = ExtResource("3_nletq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(533, 299)
@@ -16,7 +17,8 @@ texture = ExtResource("1_gwggh")
 [node name="Paddle" parent="." instance=ExtResource("2_bi8yi")]
 position = Vector2(574, 593)
 
-[node name="Gem" parent="." instance=ExtResource("3_nletq")]
-position = Vector2(734, 50)
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
 
-[connection signal="on_gem_off_screen" from="Gem" to="." method="_on_gem_off_screen"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
